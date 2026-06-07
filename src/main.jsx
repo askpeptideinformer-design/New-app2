@@ -1,3 +1,20 @@
+
+import React, { useMemo, useState } from 'react';
+import { createRoot } from 'react-dom/client';
+import { Calculator, CalendarDays, FlaskConical, Library, ShoppingCart, Syringe, Bell, Lock, Search } from 'lucide-react';
+import './styles.css';
+
+const peptides =
+  { name: 'BPC-157', category: 'Recovery', pathway: 'VEGF / FGF / NO', halfLife: 'Research-dependent', overview: 'Synthetic pentadecapeptide studied in tissue repair, tendon, ligament, gut, and angiogenic signaling models.' },
+  { name: 'TB-500', category: 'Recovery', pathway: 'Actin / cell migration', halfLife: 'Research-dependent', overview: 'Thymosin beta-4 fragment commonly referenced in connective tissue and cellular migration research.' },
+  { name: 'GHK-Cu', category: 'Recovery / Skin', pathway: 'Copper peptide / ECM', halfLife: 'Research-dependent', overview: 'Copper-binding tripeptide studied for extracellular matrix remodeling, skin, hair, and wound models.' },
+  { name: 'Retatrutide', category: 'Metabolic', pathway: 'GLP-1 / GIP / Glucagon', halfLife: 'Long acting', overview: 'Triple receptor agonist investigated in metabolic and body-composition research.' },
+  { name: 'Tirzepatide', category: 'Metabolic', pathway: 'GLP-1 / GIP', halfLife: 'Long acting', overview: 'Dual incretin receptor agonist used in metabolic research contexts.' },
+  { name: 'MOTS-C', category: 'Mitochondrial', pathway: 'AMPK', halfLife: 'Short', overview: 'Mitochondrial-derived peptide studied in AMPK, metabolism, exercise, and stress-response models.' },
+  { name: 'AICAR', category: 'Performance', pathway: 'AMPK', halfLife: 'Research-dependent', overview: 'AMPK activator studied in endurance, glucose metabolism, and mitochondrial biogenesis models.' },
+  { name: 'Thymosin Alpha-1', category: 'Immune', pathway: 'T-cell / immune modulation', halfLife: 'Research-dependent', overview: 'Immune-modulating peptide studied in T-cell signaling and antiviral immune-response research.' }
+];
+
 const products = {
   "BPC-157": ["5mg", "10mg"],
   "TB500": ["5mg", "10mg"],
@@ -32,34 +49,6 @@ const products = {
   "Bac Water": ["3ml", "10ml"],
   "Custom Blended Peptides": ["12", "15"]
 };
-import React, { useMemo, useState } from 'react';
-import { createRoot } from 'react-dom/client';
-import { Calculator, CalendarDays, FlaskConical, Library, ShoppingCart, Syringe, Bell, Lock, Search } from 'lucide-react';
-import './styles.css';
-
-const peptides = [
-  { name: 'BPC-157', category: 'Recovery', pathway: 'VEGF / FGF / NO', halfLife: 'Research-dependent', overview: 'Synthetic pentadecapeptide studied in tissue repair, tendon, ligament, gut, and angiogenic signaling models.' },
-  { name: 'TB-500', category: 'Recovery', pathway: 'Actin / cell migration', halfLife: 'Research-dependent', overview: 'Thymosin beta-4 fragment commonly referenced in connective tissue and cellular migration research.' },
-  { name: 'GHK-Cu', category: 'Recovery / Skin', pathway: 'Copper peptide / ECM', halfLife: 'Research-dependent', overview: 'Copper-binding tripeptide studied for extracellular matrix remodeling, skin, hair, and wound models.' },
-  { name: 'Retatrutide', category: 'Metabolic', pathway: 'GLP-1 / GIP / Glucagon', halfLife: 'Long acting', overview: 'Triple receptor agonist investigated in metabolic and body-composition research.' },
-  { name: 'Tirzepatide', category: 'Metabolic', pathway: 'GLP-1 / GIP', halfLife: 'Long acting', overview: 'Dual incretin receptor agonist used in metabolic research contexts.' },
-  { name: 'MOTS-C', category: 'Mitochondrial', pathway: 'AMPK', halfLife: 'Short', overview: 'Mitochondrial-derived peptide studied in AMPK, metabolism, exercise, and stress-response models.' },
-  { name: 'AICAR', category: 'Performance', pathway: 'AMPK', halfLife: 'Research-dependent', overview: 'AMPK activator studied in endurance, glucose metabolism, and mitochondrial biogenesis models.' },
-  { name: 'Thymosin Alpha-1', category: 'Immune', pathway: 'T-cell / immune modulation', halfLife: 'Research-dependent', overview: 'Immune-modulating peptide studied in T-cell signaling and antiviral immune-response research.' }
-];
-
-const nwpProducts = [
-  { peptide: 'BPC-157', strengthMg: 10, price: 55, url: '#' },
-  { peptide: 'TB-500', strengthMg: 10, price: 75, url: '#' },
-  { peptide: 'GHK-Cu', strengthMg: 50, price: 85, url: '#' },
-  { peptide: 'Retatrutide', strengthMg: 30, price: 220, url: '#' },
-  { peptide: 'Tirzepatide', strengthMg: 30, price: 190, url: '#' },
-  { peptide: 'MOTS-C', strengthMg: 20, price: 85, url: '#' },
-  { peptide: 'AICAR', strengthMg: 50, price: 95, url: '#' },
-  { peptide: 'Thymosin Alpha-1', strengthMg: 10, price: 65, url: '#' },
-  { peptide: 'Bacteriostatic Water 10mL', strengthMg: 0, price: 15, url: '#' },
-  { peptide: 'Insulin Syringes 100ct', strengthMg: 0, price: 25, url: '#' }
-];
 
 function App() {
   const [tab, setTab] = useState('dashboard');
