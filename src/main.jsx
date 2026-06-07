@@ -1,3 +1,37 @@
+const products = {
+  "BPC-157": ["5mg", "10mg"],
+  "TB500": ["5mg", "10mg"],
+  "BPC157+TB500": ["10mg", "20mg"],
+  "Retatrutide": ["5mg", "10mg", "15mg", "20mg", "30mg", "40mg"],
+  "Tirzepatide": ["5mg", "10mg", "15mg", "20mg", "30mg", "40mg"],
+  "Cagrilintide": ["5mg", "10mg"],
+  "CJC-1295 NO DAC": ["5mg", "10mg"],
+  "CJC-1295 + Ipamorelin": ["10mg", "20mg"],
+  "Ipamorelin": ["5mg", "10mg"],
+  "Sermorelin": ["5mg", "10mg"],
+  "GHK-Cu": ["50mg", "100mg"],
+  "Glow Blend": ["50mg", "70mg"],
+  "NAD+": ["500mg", "1000mg"],
+  "Glutathione": ["1500mg", "3000mg"],
+  "AICAR": ["25mg", "50mg"],
+  "MOTs-C": ["10mg", "20mg", "40mg"],
+  "SS-31": ["10mg"],
+  "SLU-PP-332": ["5mg", "10mg"],
+  "KPV": ["5mg", "10mg"],
+  "Selank": ["5mg", "10mg"],
+  "Semax": ["5mg", "10mg"],
+  "DSIP": ["5mg", "10mg"],
+  "Epithalon": ["50mg"],
+  "FOXO4-DRI": ["10mg", "20mg"],
+  "Thymosin Alpha-1": ["5mg", "10mg"],
+  "IGF-LR3": ["1mg", "2mg"],
+  "Melanotan II": ["10mg"],
+  "Pinealon": ["10mg"],
+  "AOD-9604": ["5mg", "10mg"],
+  "5-Amino-1MQ": ["5mg", "10mg", "50mg"],
+  "Bac Water": ["3ml", "10ml"],
+  "Custom Blended Peptides": ["12", "15"]
+};
 import React, { useMemo, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Calculator, CalendarDays, FlaskConical, Library, ShoppingCart, Syringe, Bell, Lock, Search } from 'lucide-react';
